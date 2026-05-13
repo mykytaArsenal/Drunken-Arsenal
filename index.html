@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHOTWAVE — Rules · Правила</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Oswald:wght@400;500;600;700&family=PT+Mono&subset=cyrillic,cyrillic-ext,latin&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --olive: #4a5239;
+    --olive-deep: #1f2516;
+    --rust-bright: #c9472f;
+    --amber: #e8a93a;
+    --cream: #ede4cf;
+    --cream-warm: #d8cca8;
+    --black: #131210;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body { min-height: 100vh; }
+
+  body {
+    background-color: var(--olive-deep);
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(232, 169, 58, 0.15) 0, transparent 35%),
+      radial-gradient(circle at 88% 78%, rgba(201, 71, 47, 0.12) 0, transparent 40%),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8'><circle cx='1' cy='1' r='0.6' fill='%23ffffff' opacity='0.04'/></svg>");
+    color: var(--cream);
+    font-family: 'Oswald', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+  }
+
+  /* Scanlines overlay */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent 0,
+      transparent 3px,
+      rgba(0,0,0,0.04) 3px,
+      rgba(0,0,0,0.04) 4px
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .stage {
+    position: relative;
+    z-index: 2;
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .tag-line {
+    font-family: 'PT Mono', monospace;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-family: 'Russo One', sans-serif;
+    font-size: clamp(2.5rem, 14vw, 6rem);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--cream);
+    text-shadow:
+      3px 3px 0 var(--rust-bright),
+      6px 6px 0 var(--black);
+    line-height: 0.9;
+    margin-bottom: 1.5rem;
+  }
+
+  .subtitle {
+    font-family: 'PT Mono', monospace;
+    color: var(--cream-warm);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 24rem;
+    margin: 0 auto 2.5rem;
+  }
+
+  .lang-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 22rem;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 480px) {
+    .lang-grid {
+      grid-template-columns: 1fr 1fr;
+      max-width: 30rem;
+    }
+  }
+
+  .lang-card {
+    display: block;
+    text-decoration: none;
+    background: var(--cream);
+    color: var(--black);
+    border: 3px solid var(--black);
+    box-shadow: 6px 6px 0 var(--black);
+    padding: 1.5rem 1.25rem;
+    transition: transform 0.12s, box-shadow 0.12s;
+  }
+
+  .lang-card:hover, .lang-card:active {
+    transform: translate(2px, 2px);
+    box-shadow: 4px 4px 0 var(--black);
+  }
+
+  .lang-card .flag {
+    font-family: 'PT Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rust-bright);
+    margin-bottom: 0.4rem;
+  }
+
+  .lang-card .name {
+    font-family: 'Russo One', sans-serif;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.3rem;
+  }
+
+  .lang-card .hint {
+    font-family: 'PT Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--olive);
+  }
+
+  .footer-stamp {
+    margin-top: 3rem;
+    font-family: 'PT Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: var(--cream-warm);
+    opacity: 0.6;
+  }
+
+  .ribbon-divider {
+    display: inline-block;
+    background: var(--rust-bright);
+    color: var(--cream);
+    padding: 0.25rem 0.9rem;
+    font-family: 'Russo One', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    box-shadow: 3px 3px 0 var(--black);
+    margin-bottom: 1.25rem;
+  }
+</style>
+</head>
+<body>
+
+<div class="stage">
+  <div class="tag-line">// FIELD MANUAL · NO. 001</div>
+
+  <h1>SHOTWAVE</h1>
+
+  <div class="ribbon-divider">Choose your language</div>
+
+  <p class="subtitle">Tactical drinking. Premium gifting.<br>Explosive Fun!</p>
+
+  <div class="lang-grid">
+    <a href="./en.html" class="lang-card">
+      <div class="flag">🇬🇧 · 🇺🇸</div>
+      <div class="name">English</div>
+      <div class="hint">Read the rules →</div>
+    </a>
+
+    <a href="./ru.html" class="lang-card">
+      <div class="flag">🇷🇺</div>
+      <div class="name">Русский</div>
+      <div class="hint">Читать правила →</div>
+    </a>
+  </div>
+
+  <div class="footer-stamp">// Drunken Arsenal · 2026</div>
+</div>
+
+</body>
+</html>
